@@ -67,7 +67,7 @@
             this.pButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pButtons.Location = new System.Drawing.Point(0, 459);
             this.pButtons.Name = "pButtons";
-            this.pButtons.Size = new System.Drawing.Size(406, 210);
+            this.pButtons.Size = new System.Drawing.Size(407, 210);
             this.pButtons.TabIndex = 1;
             // 
             // btnUpdateProduct
@@ -114,10 +114,10 @@
             this.pInfo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pInfo.Controls.Add(this.pButtons);
             this.pInfo.Controls.Add(this.rtbInfo);
-            this.pInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pInfo.Location = new System.Drawing.Point(934, 0);
+            this.pInfo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pInfo.Location = new System.Drawing.Point(933, 0);
             this.pInfo.Name = "pInfo";
-            this.pInfo.Size = new System.Drawing.Size(406, 669);
+            this.pInfo.Size = new System.Drawing.Size(407, 669);
             this.pInfo.TabIndex = 0;
             // 
             // rtbInfo
@@ -144,10 +144,10 @@
             this.pMain.Controls.Add(this.panel2);
             this.pMain.Controls.Add(this.pSort);
             this.pMain.Controls.Add(this.dgProducts);
-            this.pMain.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pMain.Location = new System.Drawing.Point(0, 0);
             this.pMain.Name = "pMain";
-            this.pMain.Size = new System.Drawing.Size(934, 669);
+            this.pMain.Size = new System.Drawing.Size(1340, 669);
             this.pMain.TabIndex = 6;
             // 
             // pSort
@@ -161,7 +161,7 @@
             this.pSort.Dock = System.Windows.Forms.DockStyle.Top;
             this.pSort.Location = new System.Drawing.Point(0, 0);
             this.pSort.Name = "pSort";
-            this.pSort.Size = new System.Drawing.Size(934, 116);
+            this.pSort.Size = new System.Drawing.Size(1340, 116);
             this.pSort.TabIndex = 4;
             // 
             // cmbFiltr
@@ -201,6 +201,7 @@
             // 
             // lblPageNum
             // 
+            this.lblPageNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPageNum.AutoSize = true;
             this.lblPageNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblPageNum.Location = new System.Drawing.Point(435, 17);
@@ -211,6 +212,7 @@
             // 
             // btnNext
             // 
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNext.BackColor = System.Drawing.Color.White;
             this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(118)))));
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -224,6 +226,7 @@
             // 
             // btnPrevious
             // 
+            this.btnPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrevious.BackColor = System.Drawing.Color.White;
             this.btnPrevious.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(118)))));
             this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -237,24 +240,27 @@
             // 
             // dgProducts
             // 
+            this.dgProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgProducts.Location = new System.Drawing.Point(12, 131);
+            this.dgProducts.Location = new System.Drawing.Point(18, 140);
             this.dgProducts.Name = "dgProducts";
             this.dgProducts.RowHeadersWidth = 51;
             this.dgProducts.RowTemplate.Height = 24;
-            this.dgProducts.Size = new System.Drawing.Size(846, 443);
+            this.dgProducts.Size = new System.Drawing.Size(898, 443);
             this.dgProducts.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(255)))), ((int)(((byte)(249)))));
             this.panel2.Controls.Add(this.btnNext);
             this.panel2.Controls.Add(this.btnPrevious);
             this.panel2.Controls.Add(this.lblPageNum);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 607);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(934, 62);
+            this.panel2.Size = new System.Drawing.Size(1340, 62);
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -287,6 +293,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Лопушок";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pButtons.ResumeLayout(false);
             this.pInfo.ResumeLayout(false);
