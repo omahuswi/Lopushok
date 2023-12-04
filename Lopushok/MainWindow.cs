@@ -20,7 +20,7 @@ namespace Lopushok
     {
         // static String ConnString = $"Host=localhost;Port=5432;Username=postgres;Password=151912;Database=lopushok";
         // static String ConnString = $"Host=localhost;Port=5432;Username=postgres;Password=134340;Database=lapushok";
-        // static String ConnString = $"Host=localhost;Port=5432;Username=postgres;Password=111111;Database=lapushok";
+        static String ConnString = $"Host=localhost;Port=5432;Username=postgres;Password=1234567890;Database='lapushok'";
         public static NpgsqlConnection db = new NpgsqlConnection(ConnString); 
         private int _pagesCount = 20;
         private int _currentPageIndex = 1;
@@ -194,6 +194,11 @@ namespace Lopushok
             }
             CalculateTotalPages(sortColumn, sortType);
             this.dgProducts.DataSource = GetCurrentRecords(this.CurrentPageIndex, sortColumn, sortType);
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
