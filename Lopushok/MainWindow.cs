@@ -195,5 +195,10 @@ namespace Lopushok
             CalculateTotalPages(sortColumn, sortType);
             this.dgProducts.DataSource = GetCurrentRecords(this.CurrentPageIndex, sortColumn, sortType);
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
