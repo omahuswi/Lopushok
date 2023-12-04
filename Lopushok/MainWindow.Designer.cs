@@ -219,9 +219,9 @@
             // 
             // rtbInfo
             // 
-            this.rtbInfo.Location = new System.Drawing.Point(56, 61);
+            this.rtbInfo.Location = new System.Drawing.Point(25, 61);
             this.rtbInfo.Name = "rtbInfo";
-            this.rtbInfo.Size = new System.Drawing.Size(234, 310);
+            this.rtbInfo.Size = new System.Drawing.Size(282, 310);
             this.rtbInfo.TabIndex = 0;
             this.rtbInfo.Text = "";
             // 
