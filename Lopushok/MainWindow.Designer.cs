@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             this.pMenu = new System.Windows.Forms.Panel();
+            this.pButtons = new System.Windows.Forms.Panel();
+            this.btnUpdateProduct = new System.Windows.Forms.Button();
+            this.btnDeleteProduct = new System.Windows.Forms.Button();
+            this.btnAddProduct = new System.Windows.Forms.Button();
+            this.pInfo = new System.Windows.Forms.Panel();
+            this.rtbInfo = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pMain = new System.Windows.Forms.Panel();
-            this.lblPageNum = new System.Windows.Forms.Label();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnPrevious = new System.Windows.Forms.Button();
-            this.dgProducts = new System.Windows.Forms.DataGridView();
             this.pSort = new System.Windows.Forms.Panel();
             this.cmbFiltr = new System.Windows.Forms.ComboBox();
             this.cmbSort = new System.Windows.Forms.ComboBox();
             this.tbFind = new System.Windows.Forms.TextBox();
-            this.pInfo = new System.Windows.Forms.Panel();
-            this.pButtons = new System.Windows.Forms.Panel();
-            this.btnAddProduct = new System.Windows.Forms.Button();
-            this.btnDeleteProduct = new System.Windows.Forms.Button();
-            this.btnUpdateProduct = new System.Windows.Forms.Button();
-            this.rtbInfo = new System.Windows.Forms.RichTextBox();
+            this.lblPageNum = new System.Windows.Forms.Label();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.dgProducts = new System.Windows.Forms.DataGridView();
             this.pMenu.SuspendLayout();
+            this.pButtons.SuspendLayout();
+            this.pInfo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgProducts)).BeginInit();
             this.pSort.SuspendLayout();
-            this.pInfo.SuspendLayout();
-            this.pButtons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // pMenu
@@ -63,6 +63,62 @@
             this.pMenu.Name = "pMenu";
             this.pMenu.Size = new System.Drawing.Size(333, 578);
             this.pMenu.TabIndex = 4;
+            // 
+            // pButtons
+            // 
+            this.pButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(255)))), ((int)(((byte)(249)))));
+            this.pButtons.Controls.Add(this.btnUpdateProduct);
+            this.pButtons.Controls.Add(this.btnDeleteProduct);
+            this.pButtons.Controls.Add(this.btnAddProduct);
+            this.pButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pButtons.Location = new System.Drawing.Point(0, 446);
+            this.pButtons.Name = "pButtons";
+            this.pButtons.Size = new System.Drawing.Size(333, 132);
+            this.pButtons.TabIndex = 1;
+            // 
+            // btnUpdateProduct
+            // 
+            this.btnUpdateProduct.Location = new System.Drawing.Point(25, 82);
+            this.btnUpdateProduct.Name = "btnUpdateProduct";
+            this.btnUpdateProduct.Size = new System.Drawing.Size(282, 23);
+            this.btnUpdateProduct.TabIndex = 2;
+            this.btnUpdateProduct.Text = "Редактировать";
+            this.btnUpdateProduct.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteProduct
+            // 
+            this.btnDeleteProduct.Location = new System.Drawing.Point(194, 31);
+            this.btnDeleteProduct.Name = "btnDeleteProduct";
+            this.btnDeleteProduct.Size = new System.Drawing.Size(113, 23);
+            this.btnDeleteProduct.TabIndex = 1;
+            this.btnDeleteProduct.Text = "Удалить";
+            this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            // 
+            // btnAddProduct
+            // 
+            this.btnAddProduct.Location = new System.Drawing.Point(25, 31);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(113, 23);
+            this.btnAddProduct.TabIndex = 0;
+            this.btnAddProduct.Text = "Добавить";
+            this.btnAddProduct.UseVisualStyleBackColor = true;
+            // 
+            // pInfo
+            // 
+            this.pInfo.Controls.Add(this.rtbInfo);
+            this.pInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pInfo.Location = new System.Drawing.Point(0, 0);
+            this.pInfo.Name = "pInfo";
+            this.pInfo.Size = new System.Drawing.Size(333, 578);
+            this.pInfo.TabIndex = 0;
+            // 
+            // rtbInfo
+            // 
+            this.rtbInfo.Location = new System.Drawing.Point(25, 61);
+            this.rtbInfo.Name = "rtbInfo";
+            this.rtbInfo.Size = new System.Drawing.Size(282, 310);
+            this.rtbInfo.TabIndex = 0;
+            this.rtbInfo.Text = "";
             // 
             // panel1
             // 
@@ -86,47 +142,9 @@
             this.pMain.Size = new System.Drawing.Size(897, 578);
             this.pMain.TabIndex = 6;
             // 
-            // lblPageNum
-            // 
-            this.lblPageNum.AutoSize = true;
-            this.lblPageNum.Location = new System.Drawing.Point(413, 546);
-            this.lblPageNum.Name = "lblPageNum";
-            this.lblPageNum.Size = new System.Drawing.Size(44, 16);
-            this.lblPageNum.TabIndex = 3;
-            this.lblPageNum.Text = "label1";
-            // 
-            // btnNext
-            // 
-            this.btnNext.Location = new System.Drawing.Point(461, 543);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(23, 23);
-            this.btnNext.TabIndex = 2;
-            this.btnNext.Text = ">";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // btnPrevious
-            // 
-            this.btnPrevious.Location = new System.Drawing.Point(387, 543);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(23, 23);
-            this.btnPrevious.TabIndex = 1;
-            this.btnPrevious.Text = "<";
-            this.btnPrevious.UseVisualStyleBackColor = true;
-            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
-            // 
-            // dgProducts
-            // 
-            this.dgProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgProducts.Location = new System.Drawing.Point(26, 77);
-            this.dgProducts.Name = "dgProducts";
-            this.dgProducts.RowHeadersWidth = 51;
-            this.dgProducts.RowTemplate.Height = 24;
-            this.dgProducts.Size = new System.Drawing.Size(846, 443);
-            this.dgProducts.TabIndex = 0;
-            // 
             // pSort
             // 
+            this.pSort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(255)))), ((int)(((byte)(249)))));
             this.pSort.Controls.Add(this.cmbFiltr);
             this.pSort.Controls.Add(this.cmbSort);
             this.pSort.Controls.Add(this.tbFind);
@@ -170,60 +188,44 @@
             this.tbFind.TabIndex = 0;
             this.tbFind.Text = "Введите для поиска";
             // 
-            // pInfo
+            // lblPageNum
             // 
-            this.pInfo.Controls.Add(this.rtbInfo);
-            this.pInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pInfo.Location = new System.Drawing.Point(0, 0);
-            this.pInfo.Name = "pInfo";
-            this.pInfo.Size = new System.Drawing.Size(333, 578);
-            this.pInfo.TabIndex = 0;
+            this.lblPageNum.AutoSize = true;
+            this.lblPageNum.Location = new System.Drawing.Point(413, 546);
+            this.lblPageNum.Name = "lblPageNum";
+            this.lblPageNum.Size = new System.Drawing.Size(44, 16);
+            this.lblPageNum.TabIndex = 3;
+            this.lblPageNum.Text = "label1";
             // 
-            // pButtons
+            // btnNext
             // 
-            this.pButtons.Controls.Add(this.btnUpdateProduct);
-            this.pButtons.Controls.Add(this.btnDeleteProduct);
-            this.pButtons.Controls.Add(this.btnAddProduct);
-            this.pButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pButtons.Location = new System.Drawing.Point(0, 446);
-            this.pButtons.Name = "pButtons";
-            this.pButtons.Size = new System.Drawing.Size(333, 132);
-            this.pButtons.TabIndex = 1;
+            this.btnNext.Location = new System.Drawing.Point(461, 543);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(23, 23);
+            this.btnNext.TabIndex = 2;
+            this.btnNext.Text = ">";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // btnAddProduct
+            // btnPrevious
             // 
-            this.btnAddProduct.Location = new System.Drawing.Point(25, 31);
-            this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Size = new System.Drawing.Size(113, 23);
-            this.btnAddProduct.TabIndex = 0;
-            this.btnAddProduct.Text = "Добавить";
-            this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnPrevious.Location = new System.Drawing.Point(387, 543);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(23, 23);
+            this.btnPrevious.TabIndex = 1;
+            this.btnPrevious.Text = "<";
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
-            // btnDeleteProduct
+            // dgProducts
             // 
-            this.btnDeleteProduct.Location = new System.Drawing.Point(194, 31);
-            this.btnDeleteProduct.Name = "btnDeleteProduct";
-            this.btnDeleteProduct.Size = new System.Drawing.Size(113, 23);
-            this.btnDeleteProduct.TabIndex = 1;
-            this.btnDeleteProduct.Text = "Удалить";
-            this.btnDeleteProduct.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdateProduct
-            // 
-            this.btnUpdateProduct.Location = new System.Drawing.Point(25, 82);
-            this.btnUpdateProduct.Name = "btnUpdateProduct";
-            this.btnUpdateProduct.Size = new System.Drawing.Size(282, 23);
-            this.btnUpdateProduct.TabIndex = 2;
-            this.btnUpdateProduct.Text = "Редактировать";
-            this.btnUpdateProduct.UseVisualStyleBackColor = true;
-            // 
-            // rtbInfo
-            // 
-            this.rtbInfo.Location = new System.Drawing.Point(25, 61);
-            this.rtbInfo.Name = "rtbInfo";
-            this.rtbInfo.Size = new System.Drawing.Size(282, 310);
-            this.rtbInfo.TabIndex = 0;
-            this.rtbInfo.Text = "";
+            this.dgProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgProducts.Location = new System.Drawing.Point(26, 77);
+            this.dgProducts.Name = "dgProducts";
+            this.dgProducts.RowHeadersWidth = 51;
+            this.dgProducts.RowTemplate.Height = 24;
+            this.dgProducts.Size = new System.Drawing.Size(846, 443);
+            this.dgProducts.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -236,14 +238,14 @@
             this.Text = "Лопушок";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pMenu.ResumeLayout(false);
+            this.pButtons.ResumeLayout(false);
+            this.pInfo.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pMain.ResumeLayout(false);
             this.pMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgProducts)).EndInit();
             this.pSort.ResumeLayout(false);
             this.pSort.PerformLayout();
-            this.pInfo.ResumeLayout(false);
-            this.pButtons.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgProducts)).EndInit();
             this.ResumeLayout(false);
 
         }
