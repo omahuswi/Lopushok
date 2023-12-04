@@ -117,6 +117,7 @@ namespace Lopushok
         /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
+            this.MinimumSize = new Size(1358, 716);
             cmbSort.SelectedIndex = 0;
             //cmbFiltr.SelectedIndex = 0;
             //CalculateTotalPages(sortColumn, sortType);            
