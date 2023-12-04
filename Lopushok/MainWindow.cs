@@ -70,13 +70,13 @@ namespace Lopushok
 
             if (page == 1)
             {
-                cmd2 = new NpgsqlCommand($"Select product_article, product_name, product_min_price from products ORDER BY {sortColumn} {sortType} LIMIT {PagesCount}");
+                cmd2 = new NpgsqlCommand($"Select product_article as \"Артикул\", product_name as \"Название\", product_min_price as \"Минимальная цена\" from products ORDER BY {sortColumn} {sortType} LIMIT {PagesCount}");
             }
             else
             {
                 int PreviousPageOffSet = (page - 1) * PagesCount;
 
-                cmd2 = new NpgsqlCommand($"Select product_article, product_name, product_min_price from products WHERE product_article NOT IN (Select product_article from products ORDER BY {sortColumn} {sortType} LIMIT {PreviousPageOffSet}) ORDER BY {sortColumn} {sortType} LIMIT {PagesCount}");
+                cmd2 = new NpgsqlCommand($"Select product_article as \"Артикул\", product_name as \"Название\", product_min_price as \"Минимальная цена\" from products WHERE product_article NOT IN (Select product_article from products ORDER BY {sortColumn} {sortType} LIMIT {PreviousPageOffSet}) ORDER BY {sortColumn} {sortType} LIMIT {PagesCount}");
             }
             try
             {                
@@ -111,7 +111,7 @@ namespace Lopushok
         }
 
         /// <summary>
-        /// Загрузка окна
+        /// Загрузка окна и предполагается вычислиение цены с помощью класса
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -121,8 +121,13 @@ namespace Lopushok
             //cmbFiltr.SelectedIndex = 0;
             //CalculateTotalPages(sortColumn, sortType);            
             //this.dgProducts.DataSource = GetCurrentRecords(this.CurrentPageIndex, sortColumn, sortType);
-            lblPageNum.Text = this.CurrentPageIndex.ToString();          
-           
+            lblPageNum.Text = this.CurrentPageIndex.ToString();
+
+           // Calculation calculator = new Calculation();
+            //int result = calculator.CalculateMaterial();
+
+            
+
         }
 
         /// <summary>

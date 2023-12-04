@@ -9,13 +9,13 @@ namespace Lopushok.models
     public class Calculation
 
     {
-        public int CalculateMaterial(int count, double width, double length, string productType, string materialType)
+        public int CalculateMaterial(int count, double product_pack_width, double product_pack_length, string product_type, string material_type)
         {
-            double area = width * length;
+            double area = product_pack_width * product_pack_length;
             double coefficient = 1.0;
 
             // Установка коэффициента в зависимости от типа продукции
-            switch (productType)
+            switch (product_type)
             {
                 case "1":
                     coefficient = 1.1;
@@ -35,7 +35,7 @@ namespace Lopushok.models
 
             // Установка процента брака в зависимости от типа материала
             double wastePercentage = 0.0;
-            switch (materialType)
+            switch (material_type)
             {
                 case "1":
                     wastePercentage = 0.3 / 100.0;
