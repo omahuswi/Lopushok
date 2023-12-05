@@ -37,37 +37,40 @@
             this.rtbInfo = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pMain = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.lblPageNum = new System.Windows.Forms.Label();
             this.pSort = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cmbFiltr = new System.Windows.Forms.ComboBox();
             this.cmbSort = new System.Windows.Forms.ComboBox();
             this.tbFind = new System.Windows.Forms.TextBox();
-            this.lblPageNum = new System.Windows.Forms.Label();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnPrevious = new System.Windows.Forms.Button();
             this.dgProducts = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.pButtons.SuspendLayout();
             this.pInfo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pMain.SuspendLayout();
-            this.pSort.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgProducts)).BeginInit();
             this.panel2.SuspendLayout();
+            this.pSort.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // pButtons
             // 
             this.pButtons.BackColor = System.Drawing.Color.White;
+            this.pButtons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pButtons.Controls.Add(this.label2);
             this.pButtons.Controls.Add(this.btnUpdateProduct);
             this.pButtons.Controls.Add(this.btnDeleteProduct);
             this.pButtons.Controls.Add(this.btnAddProduct);
             this.pButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pButtons.Location = new System.Drawing.Point(0, 459);
+            this.pButtons.Location = new System.Drawing.Point(0, 402);
             this.pButtons.Name = "pButtons";
-            this.pButtons.Size = new System.Drawing.Size(407, 210);
+            this.pButtons.Size = new System.Drawing.Size(437, 265);
             this.pButtons.TabIndex = 1;
             // 
             // btnUpdateProduct
@@ -76,7 +79,8 @@
             this.btnUpdateProduct.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(118)))));
             this.btnUpdateProduct.FlatAppearance.BorderSize = 2;
             this.btnUpdateProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateProduct.Location = new System.Drawing.Point(21, 78);
+            this.btnUpdateProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnUpdateProduct.Location = new System.Drawing.Point(37, 163);
             this.btnUpdateProduct.Name = "btnUpdateProduct";
             this.btnUpdateProduct.Size = new System.Drawing.Size(351, 44);
             this.btnUpdateProduct.TabIndex = 2;
@@ -89,7 +93,8 @@
             this.btnDeleteProduct.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(118)))));
             this.btnDeleteProduct.FlatAppearance.BorderSize = 2;
             this.btnDeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteProduct.Location = new System.Drawing.Point(199, 28);
+            this.btnDeleteProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDeleteProduct.Location = new System.Drawing.Point(215, 113);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Size = new System.Drawing.Size(173, 44);
             this.btnDeleteProduct.TabIndex = 1;
@@ -102,7 +107,8 @@
             this.btnAddProduct.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(118)))));
             this.btnAddProduct.FlatAppearance.BorderSize = 2;
             this.btnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddProduct.Location = new System.Drawing.Point(21, 28);
+            this.btnAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnAddProduct.Location = new System.Drawing.Point(37, 113);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(173, 44);
             this.btnAddProduct.TabIndex = 0;
@@ -112,17 +118,18 @@
             // pInfo
             // 
             this.pInfo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pInfo.Controls.Add(this.pButtons);
             this.pInfo.Controls.Add(this.rtbInfo);
             this.pInfo.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pInfo.Location = new System.Drawing.Point(933, 0);
+            this.pInfo.Location = new System.Drawing.Point(996, 0);
             this.pInfo.Name = "pInfo";
-            this.pInfo.Size = new System.Drawing.Size(407, 669);
+            this.pInfo.Size = new System.Drawing.Size(439, 669);
             this.pInfo.TabIndex = 0;
             // 
             // rtbInfo
             // 
-            this.rtbInfo.Location = new System.Drawing.Point(67, 55);
+            this.rtbInfo.Location = new System.Drawing.Point(61, 58);
             this.rtbInfo.Name = "rtbInfo";
             this.rtbInfo.Size = new System.Drawing.Size(282, 310);
             this.rtbInfo.TabIndex = 0;
@@ -135,20 +142,74 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1340, 669);
+            this.panel1.Size = new System.Drawing.Size(1435, 669);
             this.panel1.TabIndex = 5;
             // 
             // pMain
             // 
+            this.pMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pMain.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pMain.Controls.Add(this.panel2);
             this.pMain.Controls.Add(this.pSort);
             this.pMain.Controls.Add(this.dgProducts);
-            this.pMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pMain.Location = new System.Drawing.Point(0, 0);
             this.pMain.Name = "pMain";
-            this.pMain.Size = new System.Drawing.Size(1340, 669);
+            this.pMain.Size = new System.Drawing.Size(1004, 669);
             this.pMain.TabIndex = 6;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(255)))), ((int)(((byte)(249)))));
+            this.panel2.Controls.Add(this.btnNext);
+            this.panel2.Controls.Add(this.btnPrevious);
+            this.panel2.Controls.Add(this.lblPageNum);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 607);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1004, 62);
+            this.panel2.TabIndex = 5;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNext.BackColor = System.Drawing.Color.White;
+            this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(118)))));
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Location = new System.Drawing.Point(597, 14);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(36, 36);
+            this.btnNext.TabIndex = 2;
+            this.btnNext.Text = ">";
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPrevious.BackColor = System.Drawing.Color.White;
+            this.btnPrevious.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(118)))));
+            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevious.Location = new System.Drawing.Point(404, 15);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(36, 36);
+            this.btnPrevious.TabIndex = 1;
+            this.btnPrevious.Text = "<";
+            this.btnPrevious.UseVisualStyleBackColor = false;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // lblPageNum
+            // 
+            this.lblPageNum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPageNum.AutoSize = true;
+            this.lblPageNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblPageNum.Location = new System.Drawing.Point(509, 19);
+            this.lblPageNum.Name = "lblPageNum";
+            this.lblPageNum.Size = new System.Drawing.Size(26, 29);
+            this.lblPageNum.TabIndex = 3;
+            this.lblPageNum.Text = "1";
             // 
             // pSort
             // 
@@ -161,118 +222,8 @@
             this.pSort.Dock = System.Windows.Forms.DockStyle.Top;
             this.pSort.Location = new System.Drawing.Point(0, 0);
             this.pSort.Name = "pSort";
-            this.pSort.Size = new System.Drawing.Size(1340, 116);
+            this.pSort.Size = new System.Drawing.Size(1004, 116);
             this.pSort.TabIndex = 4;
-            // 
-            // cmbFiltr
-            // 
-            this.cmbFiltr.FormattingEnabled = true;
-            this.cmbFiltr.Location = new System.Drawing.Point(553, 76);
-            this.cmbFiltr.Name = "cmbFiltr";
-            this.cmbFiltr.Size = new System.Drawing.Size(318, 24);
-            this.cmbFiltr.TabIndex = 2;
-            this.cmbFiltr.Text = "Фильтрация";
-            // 
-            // cmbSort
-            // 
-            this.cmbSort.FormattingEnabled = true;
-            this.cmbSort.Items.AddRange(new object[] {
-            "Наименование (по возрастанию)",
-            "Наименование (по убыванию)",
-            "Номер производственного цеха (по возрастанию)",
-            "Номер производственного цеха (по убыванию)",
-            "Минимальная стоимость для агента (по возрастанию)",
-            "Минимальная стоимость для агента (по убыванию)"});
-            this.cmbSort.Location = new System.Drawing.Point(553, 46);
-            this.cmbSort.Name = "cmbSort";
-            this.cmbSort.Size = new System.Drawing.Size(318, 24);
-            this.cmbSort.TabIndex = 1;
-            this.cmbSort.Text = "Сортировка";
-            this.cmbSort.SelectedIndexChanged += new System.EventHandler(this.cmbSort_SelectedIndexChanged);
-            // 
-            // tbFind
-            // 
-            this.tbFind.Location = new System.Drawing.Point(157, 70);
-            this.tbFind.Multiline = true;
-            this.tbFind.Name = "tbFind";
-            this.tbFind.Size = new System.Drawing.Size(344, 30);
-            this.tbFind.TabIndex = 0;
-            this.tbFind.Text = "Введите для поиска";
-            // 
-            // lblPageNum
-            // 
-            this.lblPageNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPageNum.AutoSize = true;
-            this.lblPageNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblPageNum.Location = new System.Drawing.Point(435, 17);
-            this.lblPageNum.Name = "lblPageNum";
-            this.lblPageNum.Size = new System.Drawing.Size(26, 29);
-            this.lblPageNum.TabIndex = 3;
-            this.lblPageNum.Text = "1";
-            // 
-            // btnNext
-            // 
-            this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNext.BackColor = System.Drawing.Color.White;
-            this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(118)))));
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Location = new System.Drawing.Point(489, 12);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(36, 36);
-            this.btnNext.TabIndex = 2;
-            this.btnNext.Text = ">";
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // btnPrevious
-            // 
-            this.btnPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrevious.BackColor = System.Drawing.Color.White;
-            this.btnPrevious.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(118)))));
-            this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrevious.Location = new System.Drawing.Point(365, 13);
-            this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(36, 36);
-            this.btnPrevious.TabIndex = 1;
-            this.btnPrevious.Text = "<";
-            this.btnPrevious.UseVisualStyleBackColor = false;
-            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
-            // 
-            // dgProducts
-            // 
-            this.dgProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgProducts.Location = new System.Drawing.Point(18, 140);
-            this.dgProducts.Name = "dgProducts";
-            this.dgProducts.RowHeadersWidth = 51;
-            this.dgProducts.RowTemplate.Height = 24;
-            this.dgProducts.Size = new System.Drawing.Size(898, 443);
-            this.dgProducts.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(255)))), ((int)(((byte)(249)))));
-            this.panel2.Controls.Add(this.btnNext);
-            this.panel2.Controls.Add(this.btnPrevious);
-            this.panel2.Controls.Add(this.lblPageNum);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 607);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1340, 62);
-            this.panel2.TabIndex = 5;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(157, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 29);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Поиск:";
             // 
             // pictureBox1
             // 
@@ -284,11 +235,82 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(151, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 36);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Поиск:";
+            // 
+            // cmbFiltr
+            // 
+            this.cmbFiltr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cmbFiltr.FormattingEnabled = true;
+            this.cmbFiltr.Location = new System.Drawing.Point(672, 67);
+            this.cmbFiltr.Name = "cmbFiltr";
+            this.cmbFiltr.Size = new System.Drawing.Size(318, 33);
+            this.cmbFiltr.TabIndex = 2;
+            this.cmbFiltr.Text = "Фильтрация";
+            // 
+            // cmbSort
+            // 
+            this.cmbSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cmbSort.FormattingEnabled = true;
+            this.cmbSort.Items.AddRange(new object[] {
+            "Наименование (по возрастанию)",
+            "Наименование (по убыванию)",
+            "Номер производственного цеха (по возрастанию)",
+            "Номер производственного цеха (по убыванию)",
+            "Минимальная стоимость для агента (по возрастанию)",
+            "Минимальная стоимость для агента (по убыванию)"});
+            this.cmbSort.Location = new System.Drawing.Point(672, 25);
+            this.cmbSort.Name = "cmbSort";
+            this.cmbSort.Size = new System.Drawing.Size(318, 33);
+            this.cmbSort.TabIndex = 1;
+            this.cmbSort.Text = "Сортировка";
+            this.cmbSort.SelectedIndexChanged += new System.EventHandler(this.cmbSort_SelectedIndexChanged);
+            // 
+            // tbFind
+            // 
+            this.tbFind.Location = new System.Drawing.Point(157, 70);
+            this.tbFind.Multiline = true;
+            this.tbFind.Name = "tbFind";
+            this.tbFind.Size = new System.Drawing.Size(502, 30);
+            this.tbFind.TabIndex = 0;
+            // 
+            // dgProducts
+            // 
+            this.dgProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgProducts.Location = new System.Drawing.Point(18, 140);
+            this.dgProducts.Name = "dgProducts";
+            this.dgProducts.RowHeadersWidth = 51;
+            this.dgProducts.RowTemplate.Height = 24;
+            this.dgProducts.Size = new System.Drawing.Size(962, 443);
+            this.dgProducts.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(17, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(397, 29);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Панель для работы с продуктами:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1340, 669);
+            this.ClientSize = new System.Drawing.Size(1435, 669);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
@@ -296,15 +318,16 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pButtons.ResumeLayout(false);
+            this.pButtons.PerformLayout();
             this.pInfo.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pMain.ResumeLayout(false);
-            this.pSort.ResumeLayout(false);
-            this.pSort.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgProducts)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.pSort.ResumeLayout(false);
+            this.pSort.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProducts)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -329,6 +352,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
