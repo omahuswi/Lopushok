@@ -123,7 +123,8 @@ namespace Lopushok
             //CalculateTotalPages(sortColumn, sortType);            
             //this.dgProducts.DataSource = GetCurrentRecords(this.CurrentPageIndex, sortColumn, sortType);
             lblPageNum.Text = this.CurrentPageIndex.ToString();
-            //pInfo.BorderColor = Color.Red;
+            rtbInfo.ReadOnly = true;
+            rtbInfo.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right);
             // Calculation calculator = new Calculation();
             //int result = calculator.CalculateMaterial();
 
@@ -205,6 +206,23 @@ namespace Lopushok
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            AddDel myForm = new AddDel();
+            myForm.Show();
+        }
+
+        private void btnDeleteProduct_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateProduct_Click(object sender, EventArgs e)
+        {
+            Redact myForm = new Redact();
+            myForm.Show();
         }
     }
 }

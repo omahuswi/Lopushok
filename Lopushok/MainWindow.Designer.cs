@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pButtons = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnUpdateProduct = new System.Windows.Forms.Button();
-            this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.pInfo = new System.Windows.Forms.Panel();
             this.rtbInfo = new System.Windows.Forms.RichTextBox();
@@ -48,7 +48,6 @@
             this.cmbSort = new System.Windows.Forms.ComboBox();
             this.tbFind = new System.Windows.Forms.TextBox();
             this.dgProducts = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.pButtons.SuspendLayout();
             this.pInfo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -65,13 +64,22 @@
             this.pButtons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pButtons.Controls.Add(this.label2);
             this.pButtons.Controls.Add(this.btnUpdateProduct);
-            this.pButtons.Controls.Add(this.btnDeleteProduct);
             this.pButtons.Controls.Add(this.btnAddProduct);
             this.pButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pButtons.Location = new System.Drawing.Point(0, 402);
             this.pButtons.Name = "pButtons";
             this.pButtons.Size = new System.Drawing.Size(437, 265);
             this.pButtons.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(17, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(397, 29);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Панель для работы с продуктами:";
             // 
             // btnUpdateProduct
             // 
@@ -86,20 +94,7 @@
             this.btnUpdateProduct.TabIndex = 2;
             this.btnUpdateProduct.Text = "Редактировать";
             this.btnUpdateProduct.UseVisualStyleBackColor = false;
-            // 
-            // btnDeleteProduct
-            // 
-            this.btnDeleteProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(255)))), ((int)(((byte)(249)))));
-            this.btnDeleteProduct.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(118)))));
-            this.btnDeleteProduct.FlatAppearance.BorderSize = 2;
-            this.btnDeleteProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDeleteProduct.Location = new System.Drawing.Point(215, 113);
-            this.btnDeleteProduct.Name = "btnDeleteProduct";
-            this.btnDeleteProduct.Size = new System.Drawing.Size(173, 44);
-            this.btnDeleteProduct.TabIndex = 1;
-            this.btnDeleteProduct.Text = "Удалить";
-            this.btnDeleteProduct.UseVisualStyleBackColor = false;
+            this.btnUpdateProduct.Click += new System.EventHandler(this.btnUpdateProduct_Click);
             // 
             // btnAddProduct
             // 
@@ -110,13 +105,15 @@
             this.btnAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAddProduct.Location = new System.Drawing.Point(37, 113);
             this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Size = new System.Drawing.Size(173, 44);
+            this.btnAddProduct.Size = new System.Drawing.Size(351, 44);
             this.btnAddProduct.TabIndex = 0;
-            this.btnAddProduct.Text = "Добавить";
+            this.btnAddProduct.Text = "Добавить\\Удалить";
             this.btnAddProduct.UseVisualStyleBackColor = false;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // pInfo
             // 
+            this.pInfo.AutoSize = true;
             this.pInfo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pInfo.Controls.Add(this.pButtons);
@@ -129,11 +126,16 @@
             // 
             // rtbInfo
             // 
-            this.rtbInfo.Location = new System.Drawing.Point(61, 58);
+            this.rtbInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rtbInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(118)))));
+            this.rtbInfo.Location = new System.Drawing.Point(23, 24);
             this.rtbInfo.Name = "rtbInfo";
-            this.rtbInfo.Size = new System.Drawing.Size(282, 310);
+            this.rtbInfo.Size = new System.Drawing.Size(392, 372);
             this.rtbInfo.TabIndex = 0;
-            this.rtbInfo.Text = "";
+            this.rtbInfo.Text = resources.GetString("rtbInfo.Text");
             // 
             // panel1
             // 
@@ -247,6 +249,8 @@
             // 
             // cmbFiltr
             // 
+            this.cmbFiltr.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbFiltr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cmbFiltr.FormattingEnabled = true;
             this.cmbFiltr.Location = new System.Drawing.Point(672, 67);
@@ -257,6 +261,8 @@
             // 
             // cmbSort
             // 
+            this.cmbSort.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbSort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cmbSort.FormattingEnabled = true;
             this.cmbSort.Items.AddRange(new object[] {
@@ -275,10 +281,10 @@
             // 
             // tbFind
             // 
-            this.tbFind.Location = new System.Drawing.Point(157, 70);
+            this.tbFind.Location = new System.Drawing.Point(157, 67);
             this.tbFind.Multiline = true;
             this.tbFind.Name = "tbFind";
-            this.tbFind.Size = new System.Drawing.Size(502, 30);
+            this.tbFind.Size = new System.Drawing.Size(502, 33);
             this.tbFind.TabIndex = 0;
             // 
             // dgProducts
@@ -287,7 +293,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgProducts.Location = new System.Drawing.Point(18, 140);
             this.dgProducts.Name = "dgProducts";
@@ -295,16 +300,6 @@
             this.dgProducts.RowTemplate.Height = 24;
             this.dgProducts.Size = new System.Drawing.Size(962, 443);
             this.dgProducts.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(17, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(397, 29);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Панель для работы с продуктами:";
             // 
             // MainForm
             // 
@@ -321,6 +316,7 @@
             this.pButtons.PerformLayout();
             this.pInfo.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.pMain.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -335,7 +331,6 @@
         #endregion
         private System.Windows.Forms.Panel pButtons;
         private System.Windows.Forms.Button btnUpdateProduct;
-        private System.Windows.Forms.Button btnDeleteProduct;
         private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.Panel pInfo;
         private System.Windows.Forms.RichTextBox rtbInfo;
