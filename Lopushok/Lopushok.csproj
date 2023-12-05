@@ -101,13 +101,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AddDel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AddDel.Designer.cs">
+      <DependentUpon>AddDel.cs</DependentUpon>
     </Compile>
     <Compile Include="infrastructure\DBConn.cs" />
+    <Compile Include="Look.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Look.Designer.cs">
+      <DependentUpon>Look.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,8 +123,17 @@
     <Compile Include="models\Calculation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Redact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Redact.Designer.cs">
+      <DependentUpon>Redact.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddDel.resx">
+      <DependentUpon>AddDel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Look.resx">
+      <DependentUpon>Look.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -132,6 +147,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Redact.resx">
+      <DependentUpon>Redact.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

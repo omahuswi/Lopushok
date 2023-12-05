@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Lopushok
 {
-    public partial class Form1 : Form
+    public partial class Redact : Form
     {
-        public Form1()
+        public Redact()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();   
         }
     }
 }
