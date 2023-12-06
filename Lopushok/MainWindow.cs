@@ -18,9 +18,10 @@ namespace Lopushok
 {
     public partial class MainForm : Form
     {
-         static String ConnString = $"Host=localhost;Port=5432;Username=postgres;Password=151912;Database=lopushok";
+        //static String ConnString = $"Host=localhost;Port=5432;Username=postgres;Password=151912;Database=lopushok";
         // static String ConnString = $"Host=localhost;Port=5432;Username=postgres;Password=134340;Database=lapushok";
         //static String ConnString = $"Host=localhost;Port=5432;Username=postgres;Password=1234567890;Database='lapushok'";
+        static String ConnString = $"Host=localhost;Port=5432;Username=postgres;Password=11111111;Database='lapushok'";
         public static NpgsqlConnection db = new NpgsqlConnection(ConnString); 
         private int _pagesCount = 20;
         private int _currentPageIndex = 1;
@@ -50,8 +51,20 @@ namespace Lopushok
         public MainForm()
         {
             InitializeComponent();
+            TypesLoad();
         }
 
+
+
+        private string ReturnQuery()
+        {
+            string cm = null;
+            if (cmbFiltr.SelectedIndex > 0) 
+            {
+                cm = $"product_type = {cmbFiltr.SelectedValue}";
+            }            
+            return cm;
+        }
         /// <summary>
         /// Получение списка продуктов с определенной страницы
         /// </summary>
@@ -66,16 +79,19 @@ namespace Lopushok
             db.Open();
             NpgsqlCommand cmd2 = null;
             DataSet ds = new DataSet();
-            DataTable dt = new DataTable();
+            //DataTable dt = new DataTable();
+            
+
+
 
             if (page == 1)
-            {
+            {               
                 cmd2 = new NpgsqlCommand($"Select product_article as \"Артикул\", product_name as \"Название\", product_min_price as \"Минимальная цена\" from products ORDER BY {sortColumn} {sortType} LIMIT {PagesCount}");
             }
             else
             {
+                          
                 int PreviousPageOffSet = (page - 1) * PagesCount;
-
                 cmd2 = new NpgsqlCommand($"Select product_article as \"Артикул\", product_name as \"Название\", product_min_price as \"Минимальная цена\" from products WHERE product_article NOT IN (Select product_article from products ORDER BY {sortColumn} {sortType} LIMIT {PreviousPageOffSet}) ORDER BY {sortColumn} {sortType} LIMIT {PagesCount}");
             }
             try
@@ -85,15 +101,22 @@ namespace Lopushok
                 adp1.Fill(ds);
                 
             }
-            finally { db.Close(); }          
-               
-            
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally 
+            { 
+                db.Close(); 
+            }
             return ds.Tables[0];
         }
 
         /// <summary>
         /// Подсчет количества страниц
         /// </summary>
+        /// <param name="sortColumn"></param>
+        /// <param name="sortType"></param>
         private void CalculateTotalPages(String sortColumn, String sortType)
         {
             NpgsqlCommand cmd = new NpgsqlCommand($"Select product_article from products ORDER BY {sortColumn} {sortType}");
@@ -118,17 +141,15 @@ namespace Lopushok
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.MinimumSize = new Size(1358, 716);
-            cmbSort.SelectedIndex = 0;
-            //cmbFiltr.SelectedIndex = 0;
+            cmbFiltr.SelectedIndex = 0;
+            cmbSort.SelectedIndex = 0;            
             //CalculateTotalPages(sortColumn, sortType);            
             //this.dgProducts.DataSource = GetCurrentRecords(this.CurrentPageIndex, sortColumn, sortType);
             lblPageNum.Text = this.CurrentPageIndex.ToString();
 
-           // Calculation calculator = new Calculation();
+            // Calculation calculator = new Calculation();
             //int result = calculator.CalculateMaterial();
-
             
-
         }
 
         /// <summary>
@@ -200,6 +221,20 @@ namespace Lopushok
             }
             CalculateTotalPages(sortColumn, sortType);
             this.dgProducts.DataSource = GetCurrentRecords(this.CurrentPageIndex, sortColumn, sortType);
+        }
+
+        public void TypesLoad()
+        {         
+            db.Open();
+            NpgsqlCommand command = new NpgsqlCommand("select distinct product_type from products");            
+            command.Connection = db;
+            command.CommandType = CommandType.Text;
+            NpgsqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                cmbFiltr.Items.Add(reader.GetString(0));
+            }
+            db.Close();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
